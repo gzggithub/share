@@ -1,5 +1,6 @@
 <template>
     <div class="course">
+        <div class="main" v-title data-title="课程详情"></div>
         <div v-show="!(lessonsFlag||remarksFlag)" class="contentBox">
             <div class="photos">
                 <swiper :options="swiperOption">

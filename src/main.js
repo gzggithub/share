@@ -11,6 +11,13 @@ Vue.config.productionTip = false;
 
 Vue.use(VueAwesomeSwiper);
 
+// 设置浏览器标题
+Vue.directive('title', {
+    inserted: function (el, binding) {
+        document.title = el.dataset.title
+    }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

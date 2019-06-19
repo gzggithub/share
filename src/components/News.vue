@@ -1,5 +1,6 @@
 <template>
     <div class="content">
+        <div class="main" v-title data-title="资讯详情"></div>
         <p class="title">{{msg.title}}</p>
         <div class="source-date clearfix">
             <!-- 来源 -->
