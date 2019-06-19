@@ -1,0 +1,138 @@
+@media screen and (min-width: 320px) {
+	html {
+		font-size: 42.66667px;
+	}
+}
+
+@media screen and (min-width: 360px) {
+	html {
+		font-size: 48px;
+	}
+}
+
+@media screen and (min-width: 365px) {
+	html {
+		font-size: 48.66667px;
+	}
+}
+
+@media screen and (min-width: 375px) {
+	html {
+		font-size: 50px;
+	}
+}
+
+@media screen and (min-width: 411px) {
+	html {
+		font-size: 54.8px;
+	}
+}
+
+@media screen and (min-width: 412px) {
+	html {
+		font-size: 54.93333px;
+	}
+}
+
+@media screen and (min-width: 414px) {
+	html {
+		font-size: 55.2px;
+	}
+}
+
+@media screen and (min-width: 750px) {
+	html {
+		font-size: 100px;
+	}
+}
+
+body {
+	font-size: 16px;
+	-webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+p,
+pre,
+ul,
+ol,
+li,
+dl,
+dd,
+dt,
+form,
+input,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+ul,
+li,
+ol,
+dl,
+dt,
+dd {
+	list-style: none;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	letter-spacing: 0;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	border: 0;
+}
+
+input {
+	border: none;
+	outline: none;
+	background: transparent;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+textarea {
+	border: none;
+	outline: none;
+	resize: none;
+	font-family: inherit;
+	appearance: button;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+pre {
+	font-family: inherit;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+/*公用功能性类名*/
+
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.vue-slider-dot {
+	transform: translateX(-6px);
+}

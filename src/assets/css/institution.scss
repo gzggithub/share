@@ -1,0 +1,845 @@
+$img: "../assets/images/";
+
+.institution {
+    background-color: #fff;
+    padding-top: 0.8rem;
+    padding-bottom: 1.2rem;
+    position: relative;
+}
+
+.institution .photos {
+    img {
+        width: 100%;
+        height: 4.16rem;
+    }
+    .swiper-pagination {       
+        font-size: 0.3rem;
+        padding-right: 0.3rem;
+        text-align: right;
+        color: #fff;
+         width: 15%;
+        margin-left: 6.0rem;
+        background: rgba(138, 138, 138, 0.5);
+        border-radius: 10px;
+    }
+    .swiper-pagination-fraction {
+        right: 0;
+    }
+}
+
+.institution .baseData {
+    .one {
+        padding: 0.3rem 0.32rem;
+        // border-bottom: 2px solid #F4F4F4;
+    }
+    .one .logo {
+        float: left;
+        width: 1rem;
+        height: 1rem;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .one .logoRight {
+        width: 100%;
+        padding-right: 0.2rem;
+        .top .name {
+            float: left;
+            font-size: 0.35rem;
+            line-height: 0.4rem;
+        }
+        .top .area {
+            margin-left: 0.4rem;
+        }
+        .top .icon {
+            float: right;
+            // margin-left: 0.38rem;
+            // width: 0.92rem;          
+            width: 0.32rem;
+            // height: auto;
+        }
+        .top .auth {
+            float: right;
+            margin-left: 0.133333rem;
+            font-size: 0.186667rem;
+        }
+        .bottom.stars {
+            margin-top: 0.15rem;
+            .star {
+                float: left;
+                margin-right: 0.1rem;
+                width: 0.32rem;
+                height: 0.3rem;
+            }
+            .star_true {
+                background: url($img + "star_true.png") no-repeat center/100%;
+            }
+            .star_false {
+                background: url($img + "star_false.png") no-repeat center/100%;
+            }
+            .star_half {
+                background: url($img + "star_half.png") no-repeat center/100%;
+            }
+            .score {
+                float: left;
+                margin-left: 0.2rem;
+                font-size: 0.28rem;
+                line-height: 0.32rem;
+                color: #666;
+            }
+            span {
+                float: right;
+                font-size: 0.186667rem;
+
+            }
+        }
+    }
+    .two {
+        padding: 0 0.3rem;
+        border-bottom: 0.2rem solid #F6F6F6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        div:first-child.address {
+            flex: 3;
+            img {
+                width: 24px;
+                height: 24px;
+                vertical-align: middle;
+            }
+        }
+        div:last-child.telephone {
+            flex: 1;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-left: 1px solid #CCCCCC;
+            img {
+                vertical-align: middle;
+                width: 50%;
+            }
+        }
+        span {
+            font-size: 0.2rem;
+            line-height: 0.28rem;
+        }
+        span.title {
+          color: #9B9B9B;
+        }
+        span.value {
+            width: 5.5rem;
+            margin-left: 0.2rem;
+        }
+    }
+    .three {
+        padding: 0.3rem 0.3rem 0;
+        // border-bottom: 2px solid #F4F4F4;
+        .descriptionTitle {
+            font-size: 0.4rem;
+            line-height: 0.4rem;
+        }
+        .descriptionContent {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            // justify-content: center;
+            margin-top: 0.35rem;
+            padding: 0.186667rem 0.213333rem 0.266667rem;
+            font-size: 0.28rem;
+            line-height: 0.4rem;
+            color: #626262;
+            box-shadow: 0px 0px 8px 3px rgba(186,186,186,0.2);
+            border-radius:10px;
+            div:first-child {
+                flex: 1;
+                // background: #CCC;
+                img {
+                    width: 100%;
+                    vertical-align: middle;
+                }
+            }
+            div:last-child {
+                flex: 2;
+                padding-left: 10px;
+                pre {
+                    font-family: inherit;
+                    white-space: pre-wrap;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 5;
+                    overflow: hidden;
+                }
+            }           
+        }
+        h4 {
+            padding: 0.3rem 0 0.1rem;
+            font-size: 0.3rem;
+        }
+        p {
+            font-size: 0.28rem;
+            line-height: 0.4rem;
+            color: #626262;
+        }
+        ul.tag {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            li.tag-item {
+                width: 33.3%;
+                margin-top: 0.133333rem;
+                font-size: 0.28rem;
+                line-height: 0.4rem;
+                color: #626262;
+                // span:first-child {
+                //     display: inline-block;
+                //     width: 20px;
+                //     height: 20px;
+                //     line-height: 20px;
+                //     vertical-align: middle;
+                //     margin-right: 0.2rem;
+                //     border-radius: 50%;
+                //     background: #CCCCCC;
+                // }
+                img {
+                    width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    vertical-align: middle;
+                    margin-right: 0.2rem;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+.institution .teachers {
+    padding: 0.3rem;
+    border-bottom: 10px solid #F4F4F4;
+    .title {
+        font-size: 0.3rem;
+        line-height: 0.3rem;
+    }
+    .content {
+        // margin-top: 0.35rem;d
+        .items {
+            display: flex;
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+        .items .item {
+            width: 33.3%;
+            height: 2.4rem;
+            // border: 1px solid #FF9900;
+            margin-right: 0.5rem;
+            padding: 0.3rem 0;
+            // background: #FFEB99;
+            // border-radius: 5px;
+            background:rgba(255,255,255,1);
+            box-shadow:0px 0px 8px 3px rgba(186,186,186,0.2);
+            border-radius: 10px;
+            img.photo {
+                display: block;
+                margin: 0 auto;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+            }
+            .ellipsis {
+                margin: 0 auto;
+                width: 1rem;
+                height: 1rem;
+                line-height: 1rem;
+                text-align: center;
+                font-size: 0.4rem;
+            }
+            .name {
+                // display: block;
+                margin-top: 0.1rem;
+                text-align: center;
+                font-size: 0.28rem;
+                line-height: 0.28rem;
+            }
+            .experienceAge {
+                margin-top: 0.1rem;
+                text-align: center;
+                color: #646464;
+                font-size: 0.24rem;
+                line-height: 0.24rem;
+            }
+        }
+        .more {
+            float: left;
+            margin-left: 0.1rem;
+            width: 0.35rem;
+            height: 1.72rem;
+            background: url($img + "right_icon.png") no-repeat 100%/auto;
+        }
+    }
+}
+
+.institution .courses {
+    padding-top: 0.3rem;
+    .coursesHeader {
+        display: flex;
+        align-items: center;
+        div:first-child {
+            flex: 1;
+        }
+        div:last-child {
+            flex: 2;
+            text-align: right;
+            padding-right: 0.2rem;
+            height: 30px;
+            line-height: 30px;
+            font-size: 0.24rem;
+            color:rgba(153,153,153,1);
+            .icon {
+                float: right;
+                width: 30px;
+                height: 30px;
+                background: url($img + 'right.png');
+            }
+        }
+    }
+    .title {
+        margin-left: 0.3rem;
+        font-size: 0.4rem;
+        line-height: 0.4rem;
+    }
+    ul.items {
+        margin-top: 0.1rem;
+    }
+    ul.items .item {
+        padding: 0.15rem 0.3rem;
+        border-bottom: 2px solid #F4F4F4;
+        img.photo {
+            float: left;
+            width: 2.48rem;
+            height: 1.65rem;
+            border-radius: 0.1rem;
+        }
+        .itemRight {
+            width: 4.2rem;
+            float: left;
+            margin-left: 0.15rem;
+            margin-top: 0.15rem;
+        }
+        .itemRight .name {
+            font-size: 0.3rem;
+            line-height: 0.3rem;
+            display: flex;
+            align-items: center;
+            span:first-child {
+                flex: 2;
+            }
+            span:last-child {
+                flex: 1;
+                height: 0.6rem;
+                line-height: 0.65rem;
+                text-align: center;
+                background: #FFCC00;
+                color: #FFF;
+                border-radius: 0.3rem;
+            }
+        }
+        .itemRight .type_count {
+            margin-top: 0.26rem;
+            font-size: 0.22rem;
+            line-height: 0.22rem;
+            color: #787878;
+            display: flex;
+            align-items: center;
+            span:first-child {
+                flex: 2;
+            }
+            span:last-child {
+                flex: 1;
+                text-align: center;
+            }
+        }
+        .itemRight .bottom {
+            margin-top: 0.26rem;
+        }
+        .itemRight .bottom .price {
+            float: left;
+            font-size: 0.22rem;
+            line-height: 0.22rem;
+            color: #FDC11B
+        }
+        .itemRight .bottom .suitAge {
+            float: right;
+            font-size: 0.22rem;
+            line-height: 0.22rem;
+            color: #787878
+        }
+    }
+    .more {
+        width: 100%;
+        height: 1rem;
+        border-bottom: 2px solid #F4F4F4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            font-size: 0.28rem;
+            color: #656565;
+        }
+        .icon {
+            margin-left: 0.15rem;
+            width: 0.26rem;
+            height: 0.15rem;
+            background: url($img + "more_icon.png") no-repeat center/100%;
+        }
+    }
+    .empty {
+        width: 100%;
+        height: 2rem;
+        background: url($img + "no_course.png") no-repeat center/auto 1.5rem;
+        border-bottom: 2px solid #F4F4F4;
+    }
+}
+
+.institution .remarks {
+  padding-top: 0.3rem;
+  .title {
+    margin-left: 0.3rem;
+    font-size: 0.4rem;
+    line-height: 0.4rem;
+  }
+  ul.items {
+    margin-top: 0.1rem;
+  }
+  ul.items .item {
+    padding: 0.15rem 0.3rem;
+    border-bottom: 2px solid #F4F4F4;
+    position: relative;
+    img.photo {
+      float: left;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+    }
+    .itemRight {
+      float: left;
+      margin-left: 0.15rem;
+      padding-top: 0.05rem;
+    }
+    .itemRight .name {
+      font-size: 0.3rem;
+      line-height: 0.3rem;
+    }
+    .itemRight .value {
+      width: 5.8rem;
+      margin-top: 0.1rem;
+      font-size: 0.22rem;
+      line-height: 0.3rem;
+      color: #787878;
+    }
+    .time {
+      margin-top: 0.15rem;
+      font-size: 0.22rem;
+      line-height: 0.22rem;
+      color: #787878;
+      position: absolute;
+      top: 0.05rem;
+      right: 0.35rem;
+    }
+  }
+  .more {
+    width: 100%;
+    height: 1rem;
+    border-bottom: 2px solid #F4F4F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 0.28rem;
+      color: #656565;
+    }
+    .icon {
+      margin-left: 0.15rem;
+      width: 0.26rem;
+      height: 0.15rem;
+      background: url($img + "more_icon.png") no-repeat center/100%;
+    }
+  }
+  .empty {
+    width: 100%;
+    height: 2rem;
+    border-bottom: 2px solid #F4F4F4;
+    position: relative;
+    .icon{
+      width: 100%;
+      height: 1.5rem;
+      background: url($img + "no_content.png") no-repeat center/auto 1rem;
+    }
+    p {
+      text-align: center;
+      font-size: 0.24rem;
+      color: #ddd;
+      position: absolute;
+      bottom: 0.2rem;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+}
+
+.institution .teachersMore {
+    width: 100%;
+	background-color: #fff;
+    margin-top: 0.8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .title {
+        width: 100%;
+        padding: 0.25rem 0;
+        text-align: center;
+        font-size: 0.4rem;
+        line-height: 0.4rem;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        .return {
+            width: 0.26rem;
+            height: 0.44rem;
+            background: url($img + "back_icon.png") no-repeat center/100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0.3rem;
+            margin: auto;
+        }
+    }
+    ul.items {
+        margin-top: 1rem;
+		overflow: hidden;
+    }
+    ul.items .item {
+        padding: 0.15rem 0.3rem;
+        border-bottom: 2px solid #F4F4F4;
+        position: relative;
+        img.photo {
+            float: left;
+            width: 0.8rem;
+            height: 0.8rem;
+            border-radius: 50%;
+        }
+        .itemRight {
+            float: left;
+            margin-left: 0.15rem;
+            padding-top: 0.05rem;
+        }
+        .itemRight .name {
+            font-size: 0.3rem;
+            line-height: 0.3rem;           
+        }        
+        .itemRight .experienceAge {
+            margin-top: 0.18rem;
+            font-size: 0.22rem;
+            line-height: 0.22rem;
+            color: #787878;
+        }
+        .details {
+            width: 0.35rem;
+            height: 0.75rem;
+            background: url($img + "right_icon.png") no-repeat center center/0.24rem 0.4rem;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0.35rem;
+            margin: auto;
+        }
+    }
+}
+
+.institution .teacherDetails {
+    width: 100%;
+    padding-top: 0.8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .title {
+        width: 100%;
+        padding: 0.25rem 0;
+        text-align: center;
+        font-size: 0.4rem;
+        line-height: 0.4rem;
+        position: relative;
+        .return {
+            width: 0.26rem;
+            height: 0.44rem;
+            background: url($img + "back_icon.png") no-repeat center/100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0.3rem;
+            margin: auto;
+        }
+    }
+    .content .partOne {
+        width: 100%;
+        height: 3rem;
+        background: url($img + "teacher_bg.png") no-repeat center/100%;
+        padding-top: 0.42rem;
+        .photo {
+            display: block;
+            margin: 0 auto;
+            width: 1.42rem;
+            height: 1.42rem;
+            border-radius: 50%;
+        }
+        .name {
+            margin-top: 0.1rem;
+            text-align: center;
+            font-size: 0.35rem;
+            line-height: 0.35rem;
+            color: #FFF;
+        }
+        .type {
+            margin-top: 0.1rem;
+            text-align: center;
+            font-size: 0.28rem;
+            line-height: 0.28rem;
+            color: #fff;
+        }
+    }
+    .content .partTwo {
+        padding: 0.35rem 0.3rem;
+		font-size: 0.28rem;
+		line-height: 0.4rem;
+    }
+}
+
+.institution .coursesMore {
+    width: 100%;
+    padding-top: 0.8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .title {
+        width: 100%;
+        padding: 0.25rem 0;
+        text-align: center;
+        font-size: 0.4rem;
+        line-height: 0.4rem;
+        background-color: #fff;
+        position: fixed;
+        top: 0.8rem;
+        left: 0;
+        z-index: 10;
+        .return {
+            width: 0.26rem;
+            height: 0.44rem;
+            background: url($img + "back_icon.png") no-repeat center/100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0.3rem;
+            margin: auto;
+        }
+    }
+    ul.items {
+        margin-top: 1rem;
+        overflow: hidden;
+    }
+    ul.items .item {
+        padding: 0.15rem 0.3rem;
+        border-bottom: 2px solid #F4F4F4;
+        img.photo {
+            float: left;
+            width: 2.48rem;
+            height: 1.65rem;
+            border-radius: 0.1rem;
+        }
+        .itemRight {
+            width: 4.2rem;
+            float: left;
+            margin-left: 0.15rem;
+            margin-top: 0.15rem;
+        }
+        .itemRight .name {
+            font-size: 0.3rem;
+            line-height: 0.3rem;
+            display: flex;
+            align-items: center;
+            span:first-child {
+                flex: 2;
+            }
+            span:last-child {
+                flex: 1;
+                height: 0.6rem;
+                line-height: 0.65rem;
+                text-align: center;
+                background: #FFCC00;
+                color: #FFF;
+                border-radius: 0.3rem;
+            }
+        }
+        .itemRight .type_count {
+            margin-top: 0.26rem;
+            font-size: 0.22rem;
+            line-height: 0.22rem;
+            color: #787878;
+            display: flex;
+            align-items: center;
+            span:first-child {
+                flex: 2;
+            }
+            span:last-child {
+                flex: 1;
+                text-align: center;
+            }
+        }
+        .itemRight .bottom {
+            margin-top: 0.26rem;
+        }
+        .itemRight .bottom .price {
+            float: left;
+            font-size: 0.22rem;
+            line-height: 0.22rem;
+            color: #FDC11B
+        }
+        .itemRight .bottom .suitAge {
+            float: right;
+            font-size: 0.22rem;
+            line-height: 0.22rem;
+            color: #787878
+        }
+    }
+}
+
+.institution .remarksMore {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .title {
+    width: 100%;
+    padding: 0.25rem 0;
+    text-align: center;
+    font-size: 0.4rem;
+    line-height: 0.4rem;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    .return {
+      width: 0.26rem;
+      height: 0.44rem;
+      background: url($img + "back_icon.png") no-repeat center/100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0.3rem;
+      margin: auto;
+    }
+  }
+  ul.items {
+    margin-top: 1rem;
+    overflow: hidden;
+  }
+  ul.items .item {
+    padding: 0.15rem 0.3rem;
+    border-bottom: 2px solid #F4F4F4;
+    position: relative;
+    img.photo {
+      float: left;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+    }
+    .itemRight {
+      float: left;
+      margin-left: 0.15rem;
+      padding-top: 0.05rem;
+    }
+    .itemRight .name {
+      font-size: 0.3rem;
+      line-height: 0.3rem;
+    }
+    .itemRight .value {
+      width: 5.8rem;
+      margin-top: 0.1rem;
+      font-size: 0.22rem;
+      line-height: 0.3rem;
+      color: #787878;
+    }
+    .time {
+      margin-top: 0.15rem;
+      font-size: 0.22rem;
+      line-height: 0.22rem;
+      color: #787878;
+      position: absolute;
+      top: 0.05rem;
+      right: 0.35rem;
+    }
+  }
+}
+
+.institution .institutionBottom{
+  width: 100%;
+  height: 1.04rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  .one{
+    float: left;
+    width: 1.65rem;
+    height: 100%;
+    padding-top: 0.08rem;
+    background-color: #fff;
+    border-top: 2px solid #F4F4F4;
+    .icon{
+      margin: 0 auto;
+      width: 0.48rem;
+      height: 0.48rem;
+      background: url($img + "im_icon.png") no-repeat center/100%;
+    }
+    p{
+      margin-top: 0.08rem;
+      text-align: center;
+      color: #414141;
+      font-size: 0.24rem;
+      line-height: 0.24rem;
+    }
+  }
+  .two{
+    float: left;
+    width: 5.85rem;
+    height: 100%;
+    background-color: #FFBE0D;
+    text-align: center;
+    color: #FDFDFD;
+    font-size: 0.34rem;
+    line-height: 1rem;
+  }
+}
+
+.institution .fixed {
+    width: 100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    background: #FFEB99;
+    border: 1px solid #FF9900;
+    position: fixed;
+    z-index: 99999;
+}
+
+.top-fixed {
+    top: 0;
+}
+
+.bottom-fixed {
+    bottom: 0;
+}
