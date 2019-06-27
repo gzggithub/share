@@ -3,19 +3,11 @@ import Router from 'vue-router'
 import Institution from '@/components/Institution'
 import Course from '@/components/Course'
 import News from '@/components/News'
-import HelloWorld from '@/components/HelloWorld'
-
-import Home from '@/components/Home'
 
 Vue.use(Router)
 
 export default new Router({
     routes: [
-        // {
-        //     path: '/',
-        //     name: 'Home',
-        //     component: Home
-        // },
         {
             path: '/',
             name: 'Institution',

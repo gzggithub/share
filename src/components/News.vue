@@ -18,8 +18,7 @@
                 <span>{{msg.views}}</span>
             </div>
         </div>
-        <div class="fixed top-fixed" @click="toApp">打开淘儿学APP，了解更多精彩内容</div>
-        <div class="fixed bottom-fixed" @click="toApp">打开淘儿学APP，了解更多精彩内容</div>
+        <div class="fixed " :class="appStatus ? 'top-fixed' : 'bottom-fixed'" @click="toApp">点击这里打开淘儿学APP，收获更多精彩</div>
     </div>
 </template>
 
@@ -33,47 +32,37 @@
                 id: null,
                 type: null,
                 msg: {},
+                appStatus: true,
             }
         },
         created: function () {
             this.id = this.getUrlParams("id");
-            // this.type = this.getUrlParams("type");
-            // this.setPath(this.type);
             this.getData();
         },
+        mounted() {
+            window.addEventListener('scroll', this.setScrollTop);
+        },
         methods: {
-             // 获取机构id
+            // 监听设置页面滚动高度
+            setScrollTop() {
+                let scrollTop = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
+                if (scrollTop > 50) {
+                    this.appStatus = false;
+                } else {
+                    this.appStatus = true;
+                }
+            },
+            // 获取机构id
             getUrlParams(name) {
                 const reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
                 const r = window.location.search.substr(1).match(reg); //匹配目标参数
                 if (r != null) return unescape(r[2]);
                 return null; //返回参数值
             },
-            // 设置跳转路由
-            // setPath(type) {                
-            //     if (type === 1) { // 跳到机构分享
-            //         this.$router.push({
-            //             path: '/',
-            //         });
-            //     } else if (type === 2) { // 跳到课程分享
-            //         this.$router.push({
-            //             path: '/course',
-            //         });
-            //     } else if (type === 3) { // 跳到资讯分享
-            //         this.$router.push({
-            //             path: '/news',
-            //         });
-            //     } else { // 跳到机构分享
-            //         this.$router.push({
-            //             path: '/',
-            //         });
-            //     }                       
-            // },
             // 获取资讯基本信息
             getData() {
                 const params = {
                     id: this.id
-                    // id: 197
                 };
                 getNewsDetail(params).then((res) => {
                     if (res.data.result === "0") {
@@ -102,6 +91,9 @@
             toApp() {
                 window.open("https://a.app.qq.com/o/simple.jsp?pkgname=com.taoerxue.children")
             }
+        },
+        destoryed() {
+            window.removeEventListener('scroll', this.setScrollTop);
         }
     };
 </script>
@@ -198,8 +190,8 @@
         height: 0.8rem;
         line-height: 0.8rem;
         text-align: center;
-        background: #FFEB99;
-        border: 1px solid #FF9900;
+        background: rgba(255,255,255,1);
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.09);
         position: fixed;
         left: 0;
         z-index: 99999;
