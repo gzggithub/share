@@ -1,7 +1,7 @@
 // 测试代理地址
-let base = 'https://sixsix.taoerxue.com.cn/taoerxue-app/1'
+// let base = 'https://sixsix.taoerxue.com.cn/taoerxue-app/1'
 // 正式代理地址
-// let base = 'https://newapi.taoerxue.cn/2'
+let base = 'https://newapi.taoerxue.cn/4'
 
 export  default {
     // 获取所有机构类型
