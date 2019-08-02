@@ -3,9 +3,9 @@
         <div class="main" v-title data-title="机构详情"></div>
         <div class="contentBox">
             <div class="photos">
-                <swiper :options="swiperOption">
-                    <swiperSlide v-for="(item,index) in msg.photoList" :key="index">
-                        <img style="width: 100%" :src="item.path">
+                <swiper :options="swiperOption" v-if="msg.bannerList">
+                    <swiperSlide v-for="(item, index) in msg.bannerList" :key="index">
+                        <img style="width: 100%" :src="item">
                     </swiperSlide>
                     <div class="swiper-pagination" slot="pagination"></div>
                 </swiper>
@@ -18,14 +18,12 @@
                             <span class="auth">认证</span>
                             <img class="icon" src="../assets/images/auth_icon.png" alt="">                     
                         </div>
-                        <div class="bottom stars clearfix">
+                        <div class="bottom stars clearfix" v-if="msg.starObj">
                             <div v-for="item in msg.starObj" class="star" :class="`star_` + item"></div>
                             <span class="score">{{msg.star ? msg.star : "暂无评分"}}</span>
                             <span class="area">{{msg.areaName}}</span>
-                        </div>
-                        
+                        </div>                        
                     </div>
-
                 </div>
                 <div class="two clearfix">
                     <div class="address">
@@ -53,7 +51,7 @@
                     <p class="title">商家面积： {{msg.scope}} 平方米</p>
                     <p class="title">教室数目： {{msg.classNumber}} 间</p>
                     <p class="title">师资力量： {{msg.teacherNumber}} 名</p>
-                    <ul class="tag">
+                    <ul class="tag" v-if="msg.label">
                         <li class="tag-item" v-for="(item, index) in msg.label" :key="index">
                             <img src="../assets/images/tag.png" alt="">
                             <span>{{item}}</span>
@@ -65,15 +63,15 @@
                 <h4 class="title">教师展示</h4>
                 <div class="content">
                     <swiper :options="swiperOptionTeachers" class='items'>
-                        <swiperSlide v-for="(item,index) in teachers" :key="index" class='item'>
+                        <swiperSlide v-for="(item,index) in teacherList" :key="index" class='item'>
                             <div @click="toApp">
                                 <img v-show="item.photo" :src="item.photo" alt="" class="photo">
-                                <div class="name">{{item.nickName}}</div>
+                                <div class="name">{{item.name}}</div>
                                 <div v-show="item.experienceAge" class="experienceAge">{{item.experienceAge}}年教龄</div>
                             </div>                                                      
                         </swiperSlide>
                         <!-- <swiperSlide class='item'>
-                            <div v-show="teachers.length > 3" @click="setTeachersFlag(true)">
+                            <div v-show="msg.teacherList.length > 3" @click="setTeachersFlag(true)">
                                 <div  class="ellipsis">...</div>
                                 <div class="name">查看更多</div>                                
                             </div>                                                      
@@ -87,13 +85,13 @@
                     <div class="title">机构课程</div>
                     <!-- <div @click="setCoursesFlag(true)"> -->
                     <div @click="toApp">
-                        <span>共{{courses.length}}个课程可选</span>
+                        <span>共{{courseList.length}}个课程可选</span>
                         <div class="icon"></div>
-                    </div>      
+                    </div>
                 </div>                
-                <ul v-if="courses.length" class="items">
-                    <li v-for="item in courses.slice(0,3)" class="item clearfix" @click="toApp">
-                        <img :src="item.photos[0].path" alt="" class="photo">
+                <ul v-if="courseList" class="items">
+                    <li v-for="item in courseList.slice(0,3)" class="item clearfix" @click="toApp">
+                        <img :src="item.pic" alt="" class="photo">
                         <div class="itemRight">
                             <div class="name">
                                 <span>{{item.name.length > 8 ? item.name.slice(0, 8) + "..." : item.name}}</span>
@@ -101,7 +99,7 @@
                             </div>
                             <div class="type_count">
                                 <span>{{item.typeName}} | {{item.count}}课时</span>
-                                <span>已售{{item.quantity}}份</span>
+                                <span>已售{{item.soldQuantity}}份</span>
                             </div>
                             <div class="bottom clearfix">
                                 <span class="price">￥{{item.price.toFixed(2)}}</span>
@@ -110,11 +108,11 @@
                         </div>
                     </li>
                 </ul>
-               <!--  <div v-if="courses.length>3" @click="setCoursesFlag(true)" class="more">
+               <!--  <div v-if="msg.courseList.length>3" @click="setCoursesFlag(true)" class="more">
                     <span>查看全部课程</span>
                     <div class="icon"></div>
                 </div> -->
-                <div v-if="courses.length===0" class="empty"></div>
+                <div v-if="courseList.length===0" class="empty"></div>
             </div>            
         </div>
         <!-- <div @click="toApp"
@@ -140,7 +138,7 @@
     } from "vue-awesome-swiper";
 
     export default {
-        name: 'Institution',
+        // name: 'Institution',
         components: {
             swiper,
             swiperSlide,            
@@ -166,15 +164,17 @@
                 },
                 id: null,
                 type: null,
-                msg: {},                
-                teachers: [],
-                courses: [],
+                teacherList: [],
+                courseList: [],
+                msg: {},
                 appStatus: true,
             }
         },
         created: function () {
             this.id = this.getUrlParams("id");
             this.type = this.getUrlParams("type");
+            console.log(this.id)
+            console.log(this.type)
             this.setPath(this.type);
             if (this.type == 1) {
                 this.getData();
@@ -225,51 +225,28 @@
             getData() {
                 const params = {
                     id: this.id
-                    // id: 197
                 };
                 getOrgDetailInfo(params).then((res) => {
                     if (res.data.result === "0") {
-                        console.log(res.data.data);
                         // 机构信息
-                        const data = res.data.data.orgInfoDTO;
+                        const data = res.data.data;
                         console.log(data)
                         // 评分处理
-                        const star = data.totalScore ? Math.round((data.scoreNumber / data.totalScore) * 10) / 10 : 0;                    
+                        const star = data.totalScore ? Math.round(data.scoreNumber / data.totalScore) : 0;
                         // 数据
                         this.msg = data;
                         // 机构名称处理
-                        this.msg.name = data.name.length > 14 ? data.name.slice(0, 14) + "..." : data.name;
-                        // 图片处理
-                        if (!this.msg.photoList) {
-                            this.msg.photoList = [];
-                        }
-                        // this.msg.photoList.unshift(data.orgResourceList);
-                        // 轮播图片
-                        const fnFilter01 = (param) => {
-                            return param.type === 1;
-                        }
-                        // 机构信息的图片
-                        const fnFilter02 = (param) => {
-                            return param.type === 2;
-                        }
-                        this.msg.photoList = data.orgResourceList.filter(fnFilter01);
-                        this.msg.icon = data.orgResourceList.filter(fnFilter02)[0].path;        
+                        this.msg.name = data.name.length > 14 ? data.name.slice(0, 14) + "..." : data.name; 
                         this.msg.star = star;
                         this.msg.starObj = this.getStarObj(star);
-                        // 教师展示信息
-                        this.teachers = res.data.data.teacherDTOS.list;
-                        // this.teachers.push({
-                        //     'photo': '',
-                        //     'nickName': '查看更多',
-                        //     'experienceAge': ''
-                        // });
-                        // 机构课程信息
-                        this.courses = res.data.data.courseInfoDTOS.list;
+                        this.teacherList = data.teacherList;
+                        this.courseList = data.courseList;         
                     } else {
                         // alert(res.data.message);
                         console.log(res.data.message);
                     }
                 }).catch((error) => {
+                    console.log(error)
                     // alert(error);
                 });
             },

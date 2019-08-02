@@ -25,8 +25,8 @@
 <script>
     import { getNewsDetail } from '../config'
     export default {
-        name: 'content',
-        components: {},
+        // name: 'content',
+        // components: {},
         data () {
             return {
                 id: null,

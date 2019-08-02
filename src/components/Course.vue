@@ -155,7 +155,7 @@
     import {swiper, swiperSlide} from "vue-awesome-swiper";
 
     export default {
-        name: 'Institution',
+        // name: 'Institution',
         components: {
             swiper,
             swiperSlide,
